@@ -12,6 +12,7 @@ const config: Config = {
         inter: ["var(--font-inter)", "sans-serif"],
         lato: ["var(--font-lato)", "sans-serif"],
         mulish: ["var(--font-mulish)", "sans-serif"],
+        syne: ["var(--font-syne)", "sans-serif"], // Add this line
       },
     },
   },
