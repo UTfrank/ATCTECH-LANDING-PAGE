@@ -9,7 +9,7 @@ const Navbar = () => {
     const pathname = usePathname()
 
     return (
-        <nav className="w-full flex justify-center items-center py-6">
+        <nav className="w-full flex justify-center items-center py-4">
             <div className="container flex justify-between items-center">
                 <Link href="/" className="w-fit">
                     <Image src="/Logo.svg" alt="logo" width={100} height={100} />
@@ -31,7 +31,7 @@ const Navbar = () => {
                         <IoCallOutline />
                     </li>
                     <li>
-                        <Link href="tel:+123456789" className="text-xs font-lato font-semibold text-[#040000]">+123 456 789</Link>
+                        <Link href="tel:+447761425493" className="text-xs font-lato font-semibold text-[#040000]">+44 7761 425 493</Link>
                     </li>
                 </ul>
             </div>

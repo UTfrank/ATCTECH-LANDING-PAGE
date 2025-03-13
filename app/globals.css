@@ -122,6 +122,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -131,6 +132,24 @@
   .container {
     @apply !w-10/12 mx-auto
   }
+
+  .bg-options {
+    @apply bg-no-repeat bg-cover bg-center
+  }
+}
+
+.bg-header {
+  background-image: url('../public/header-bg.png');
+}
+
+.slider_bg-1 {
+  background-image: url('../public/slider_1.png');
+  image-rendering: optimizeQuality;
+}
+
+.slider_bg-2 {
+  background-image: url('../public/slider_2.png');
+  image-rendering: optimizeQuality;
 }
 
 .embla {
@@ -144,4 +163,8 @@
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+
+.embla__slide.is-selected {
+  opacity: 1;
 }
