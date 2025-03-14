@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const Header = () => {
     const router = useRouter();
     return (
-        <header className="bg-options bg-contain bg-top bg-header h-screen pt-[83px]">
+        <header className="bg-options bg-contain bg-top bg-header h-screen pt-[83px] mb-6">
             <div className="container flex flex-col gap-y-8">
                 <div className="flex justify-between *:w-1/2">
                     <div className="flex flex-col gap-y-[10px] text-white font-mulish">

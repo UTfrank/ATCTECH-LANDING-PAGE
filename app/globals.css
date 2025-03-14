@@ -130,7 +130,7 @@
 
 @layer components {
   .container {
-    @apply !w-10/12 mx-auto
+    @apply !w-11/12 mx-auto
   }
 
   .bg-options {
@@ -150,6 +150,13 @@
 .slider_bg-2 {
   background-image: url('../public/slider_2.png');
   image-rendering: optimizeQuality;
+}
+
+.about_bg-1 {
+  background-image: url('../public/about.png');
+}
+.about_bg-2 {
+  background-image: url('../public/slider_2.png');
 }
 
 .embla {
