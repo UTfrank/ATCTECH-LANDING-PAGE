@@ -22,3 +22,17 @@ export const learning_section = [
     { id: 5, image: "./project-management.svg", title: "Project Management Excellence", subtitle: "Develop essential skills to plan, execute, and manage projects efficiently using industry best practices.", link: "/services" },
     { id: 6, image: "./ai-ml.svg", title: "AI & Machine Learning for Innovation", subtitle: "Harness artificial intelligence to automate processes and drive innovation.", link: "/services" },
 ]
+
+export const work_process = [
+    { id: "01", title: "Understanding Your Needs", subtitle: "We listen to your goals and challenges to find the right solutions for you." },
+    { id: "02", title: "Creating a Plan", subtitle: "Our team designs a clear and customized strategy to achieve your objectives." },
+    { id: "03", title: "Implementation & Execution", subtitle: "We put the plan into action using the best tools and technology." },
+    { id: "04", title: "Ongoing Support & Improvement", subtitle: "We continue to help, update, and improve to ensure long-term success." },
+]
+
+export const counter = [
+    { id: 1, title: "In Business", count: "10 years" },
+    { id: 2, title: "Customers", count: "75,000+" },
+    { id: 3, title: "Monthly Blog Readers", count: "100k+" },
+    { id: 4, title: "Social Followers", count: "1.2m+" },
+]

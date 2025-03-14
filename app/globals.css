@@ -159,6 +159,10 @@
   background-image: url('../public/slider_2.png');
 }
 
+.work_process-bg {
+  background-image: url('../public/work_process-bg.png');
+}
+
 .embla {
   overflow: hidden;
 }
