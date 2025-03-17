@@ -3,6 +3,7 @@ import { Inter, Lato, Mulish, Syne } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
+import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
@@ -47,6 +48,7 @@ export default function RootLayout({
       >
         <Topbar />
         <Navbar />
+        <MobileNav />
         {children}
         <Footer />
       </body>

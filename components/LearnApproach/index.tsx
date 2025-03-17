@@ -4,9 +4,9 @@ import Link from "next/link";
 const LearnApproach = () => {
     return (
         <section className="w-full flex justify-center bg-[#0400000F] font-mulish">
-            <div className="w-9/12 flex flex-col justify-between items-center gap-y-[30px] py-[50px]">
-                <h4 className="text-[#2F2F2F] text-[40px] font-extrabold">Our Learning Approach</h4>
-                <div className="grid grid-cols-3 gap-5">
+            <div className="w-10/12 lg:w-9/12 flex flex-col justify-between items-center gap-y-[30px] py-[50px]">
+                <h4 className="text-[#2F2F2F] text-[24px] lg:text-[40px] font-extrabold">Our Learning Approach</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {learning_section.map(item => (
                         <div key={item.id} className="flex flex-col gap-y-5 rounded-xl bg-[#FFFFFF80] hover:bg-white transition-all ease-in duration-300 border border-[#DCDCDC] px-6 py-7">
                             <div className="flex flex-col gap-2.5">
