@@ -36,3 +36,26 @@ export const counter = [
     { id: 3, title: "Monthly Blog Readers", count: "100k+" },
     { id: 4, title: "Social Followers", count: "1.2m+" },
 ]
+
+export const latest_jobs = [
+    { id: 1, image: "./job_1.png", date: "December 05, 2021", tag: "Product Design", title: "UI/UX Designer" },
+    { id: 2, image: "./job_2.png", date: "June 05, 2025", tag: "Web Development", title: "React Native Developer" },
+    { id: 3, image: "./job_3.png", date: "December 05, 2021", tag: "Scrum Master", title: "Business Analyst" },
+]
+
+export const testimonials = [
+    { id: 1, image: "/test_1.jpg", name: " Mick G.", title: "Head of Sales and Marketing", testimony: "ATCTECH CONSULTING LTD transformed our business with their expert guidance. Their strategic mentorship and hands-on training helped us navigate the complexities of digital transformation, enabling us to scale efficiently and stay ahead of the competition." },
+    { id: 2, image: "/test_2.jpg", name: "Esther P.", title: "Product Manager", testimony: "ATCTECH CONSULTING LTD's mentorship and consulting services exceeded our expectations. Their ability to simplify complex concepts and provide practical solutions allowed us to innovate, adapt, and remain competitive in an ever-evolving tech landscape." },
+    { id: 3, image: "/test_3.jpg", name: "Sophia L.", title: "Operations Manager", testimony: "The professionalism and expertise of ATCTECH CONSULTING LTD are unmatched. Their tailored solutions and in-depth industry knowledge provided us with the tools and strategies needed to optimize our operations and drive sustainable growth." },
+]
+
+export const partners = [
+    { id: 1, image: "/brand_1.png" },
+    { id: 2, image: "/brand_2.png" },
+    { id: 3, image: "/brand_3.png" },
+    { id: 4, image: "/brand_4.png" },
+    { id: 5, image: "/brand_5.png" },
+    { id: 6, image: "/brand_6.png" },
+    { id: 7, image: "/brand_7.png" },
+    { id: 8, image: "/brand_8.png" },
+]

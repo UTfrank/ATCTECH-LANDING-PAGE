@@ -28,17 +28,14 @@ export function HeaderCarousel() {
     const scrollPrev = useCallback(() => { if (emblaApi) emblaApi.scrollPrev() }, [emblaApi]);
     const scrollNext = useCallback(() => { if (emblaApi) emblaApi.scrollNext() }, [emblaApi]);
 
-    // Track autoplay state
     const [autoplayIsPlaying, setAutoplayIsPlaying] = useState<boolean>(true);
 
     useEffect(() => {
         if (!emblaApi) return;
 
-        // Get the autoplay plugin instance
         const autoplayPlugin = emblaApi?.plugins().autoplay;
         if (!autoplayPlugin) return;
 
-        // Update state when autoplay changes
         const onAutoplayChange = () => {
             setAutoplayIsPlaying(autoplayPlugin.isPlaying());
         };
@@ -55,7 +52,8 @@ export function HeaderCarousel() {
                 <div className="embla__container h-full">
                     <div className="embla__slide bg-options slider_bg-1"></div>
                     <div className="embla__slide bg-options slider_bg-2"></div>
-                </div></div>
+                </div>
+            </div>
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-x-[130px]">
                 <div className='h-[85px] w-[85px] rounded-full relative before:content-[""] before:h-full before:w-full before:absolute before:backdrop-blur-3xl before:bg-white/[0.03] before:-z-[1] overflow-hidden flex justify-center items-center'>
                     <button className="h-[45px] w-[45px] text-xl rounded-full bg-[#FFFAFA] hover:bg-[#710000] hover:text-white cursor-pointer flex justify-center items-center embla__prev" onClick={scrollPrev}><GoArrowLeft /></button>
