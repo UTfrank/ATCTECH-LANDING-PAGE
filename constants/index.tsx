@@ -71,3 +71,9 @@ export const vision_list = [
     { id: 2, text: "Equipping professionals with essential tech skills." },
     { id: 3, text: "Creating a collaborative ecosystem for innovation." },
 ]
+
+export const team_members = [
+    { id: 1, image: "/team_1.jpg", name: "Princy Flora", title: "Co-Founder of Alofirm", facebook: "#", twitter: "#", linkedin: "#" },
+    { id: 2, image: "/team_2.jpg", name: "Jane Smith", title: "CTO", facebook: "#", twitter: "#", linkedin: "#" },
+    { id: 3, image: "/team_3.jpg", name: "Michael Johnson", title: "CFO", facebook: "#", twitter: "#", linkedin: "#" },
+]
