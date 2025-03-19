@@ -180,3 +180,8 @@
 .embla__slide.is-selected {
   opacity: 1;
 }
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
