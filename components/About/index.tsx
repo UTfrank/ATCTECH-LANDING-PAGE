@@ -2,7 +2,7 @@ import Image from "next/image"
 import { about_details } from "@/constants"
 import Button from "@/components/Button"
 
-const About = () => {
+const AboutContent = () => {
     return (
         <div className="w-full font-mulish">
             <div className="container flex flex-col md:flex-row md:gap-x-[60px] py-5 lg:p-5">
@@ -43,4 +43,4 @@ const About = () => {
     )
 }
 
-export default About
+export default AboutContent

@@ -59,3 +59,15 @@ export const partners = [
     { id: 7, image: "/brand_7.png" },
     { id: 8, image: "/brand_8.png" },
 ]
+
+export const mission_list = [
+    { id: 1, text: "Providing expert training and mentorship for career growth." },
+    { id: 2, text: "Delivering seamless and scalable technology solutions." },
+    { id: 3, text: "Enabling businesses to leverage digital tools effectively." },
+]
+
+export const vision_list = [
+    { id: 1, text: "Enabling businesses to leverage digital tools effectively." },
+    { id: 2, text: "Equipping professionals with essential tech skills." },
+    { id: 3, text: "Creating a collaborative ecosystem for innovation." },
+]
