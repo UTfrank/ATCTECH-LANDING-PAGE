@@ -5,6 +5,7 @@ import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
+import BackToTop from '@/components/BackToTop';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -58,6 +59,7 @@ export default function RootLayout({
         <MobileNav />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

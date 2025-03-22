@@ -41,10 +41,10 @@ const Footer = () => {
                         <div className="flex items-center gap-x-4 text-[#AEAEB2]">
                             <p className="font-syne font-bold text-xl">Contact</p>
                             <p className={`transition-colors font-inter text-xs capitalize`}>
-                                27 Paramount building, princess Street, Swindon, UK, SN1 2SD
+                                Flat 2, 22 Mazurek way. Swindon. SN25 1AR
                             </p>
                         </div>
-                    </div> 
+                    </div>
                     <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 justify-between items-center text-[#AEAEB2] lg:w-6/12 mx-auto *:flex">
                         <div className="gap-x-[22px]">
                             {social_links.map(item =>

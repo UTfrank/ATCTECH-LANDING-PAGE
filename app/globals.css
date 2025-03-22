@@ -185,3 +185,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.form-shadow {
+  box-shadow: 1px 21px 57px -28px rgb(219, 20, 241, 0.5), 1px 21px 57px -28px rgba(219, 20, 241, 0.5);
+}

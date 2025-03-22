@@ -10,8 +10,8 @@ const Header = () => {
             <div className="container flex flex-col gap-y-8">
                 <div className="flex flex-col md:flex-row gap-y-4 justify-between *:md:w-1/2">
                     <div className="flex flex-col gap-y-[10px] text-white font-mulish">
-                        <h1 className="text-4xl font-extrabold text-wrap">Empowering Innovation, Building Digital Success </h1>
-                        <p className="text-[13.5px]">Our team of seasoned tech professionals is dedicated to delivering top-tier consulting, training, and mentorship—turning bold ideas into groundbreaking solutions.  </p>
+                        <h1 className="text-4xl font-extrabold text-wrap">Driving Digital Excellence with Tailored Solutions.</h1>
+                        <p className="text-[13.5px]">We craft innovative strategies and cutting-edge solutions to help businesses and professionals thrive in the evolving tech landscape. </p>
                     </div>
                     <div className="flex md:justify-end items-center gap-4">
                         <Button variant="primary" size="md" onClick={() => router.push("contact")}>Get Started</Button>

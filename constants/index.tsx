@@ -77,3 +77,136 @@ export const team_members = [
     { id: 2, image: "/team_2.jpg", name: "Jane Smith", title: "CTO", facebook: "#", twitter: "#", linkedin: "#" },
     { id: 3, image: "/team_3.jpg", name: "Michael Johnson", title: "CFO", facebook: "#", twitter: "#", linkedin: "#" },
 ]
+
+export const addresses = [
+    {
+        id: 1, country: "United States", slug: "USA", text: "Flat 2, 22 Mazurek way. Swindon. SN25 1AR"
+    },
+    {
+        id: 2, country: "Nigeria", slug: "NG", text: "Flat 2, 22 Mazurek way. Swindon. SN25 1AR"
+    },
+    {
+        id: 3, country: "United Kingdom", slug: "UK", text: "Flat 2, 22 Mazurek way. Swindon. SN25 1AR"
+    },
+]
+
+export const faqs = [
+    {
+        id: 1,
+        question: "What services does ATCTECH CONSULTING LTD offer?",
+        answer: "We provide expert technology consulting, professional training, and strategic mentorship to help businesses and individuals navigate the digital landscape and achieve their goals."
+    },
+    {
+        id: 2,
+        question: "Who can benefit from your services?",
+        answer: "Our services are tailored for businesses, startups, and professionals looking to enhance their technological capabilities, adopt innovative solutions, and gain industry-leading expertise."
+    },
+    {
+        id: 3,
+        question: "Do you offer customized technology solutions?",
+        answer: "Yes, we analyze your specific needs and provide customized solutions that align with your business objectives and industry trends."
+    },
+    {
+        id: 4,
+        question: "How can I enroll in your training programs?",
+        answer: "You can enroll by visiting our website, filling out the registration form, or contacting our team for assistance."
+    },
+    {
+        id: 5,
+        question: "How can I get in touch with ATCTECH CONSULTING LTD?",
+        answer: "You can reach us via email, phone, or through the contact form on our website. Our team will respond as soon as possible."
+    }
+]
+
+export const recruiting_jobs = [
+    {
+        id: 1,
+        department: "Engineering",
+        title: "Senior Full Stack Developer",
+        city: "London, UK",
+        jobType: "Full Time",
+        description: "We're looking for a Senior Full Stack Developer with expertise in React, Node.js, and cloud technologies. You'll be responsible for architecting and implementing scalable solutions for our enterprise clients.",
+        requirements: [
+            "8+ years of experience in web development",
+            "Strong proficiency in React, Node.js, and TypeScript",
+            "Experience with cloud platforms (AWS/Azure/GCP)",
+            "Knowledge of microservices architecture"
+        ],
+        link: "/jobs/senior-full-stack-developer"
+    },
+    {
+        id: 2,
+        department: "Design",
+        title: "UI/UX Designer",
+        city: "New York, USA",
+        jobType: "Full Time",
+        description: "Join our design team to create intuitive and engaging user experiences for our digital products. You'll work closely with developers and product managers to bring designs to life.",
+        requirements: [
+            "5+ years of UI/UX design experience",
+            "Proficiency in Figma and Adobe Creative Suite",
+            "Experience with design systems",
+            "Strong portfolio demonstrating user-centered design"
+        ],
+        link: "/jobs/ui-ux-designer"
+    },
+    {
+        id: 3,
+        department: "Data Science",
+        title: "Machine Learning Engineer",
+        city: "Berlin, Germany",
+        jobType: "Full Time",
+        description: "We're seeking a Machine Learning Engineer to develop and deploy AI solutions. You'll work on cutting-edge projects involving natural language processing and computer vision.",
+        requirements: [
+            "Masters/PhD in Computer Science or related field",
+            "Experience with PyTorch or TensorFlow",
+            "Strong background in mathematics and statistics",
+            "Published research papers is a plus"
+        ],
+        link: "/jobs/machine-learning-engineer"
+    },
+    {
+        id: 4,
+        department: "Product",
+        title: "Product Manager",
+        city: "Singapore",
+        jobType: "Full Time",
+        description: "Lead product strategy and execution for our enterprise solutions. You'll work with stakeholders to define product vision and ensure successful delivery.",
+        requirements: [
+            "5+ years of product management experience",
+            "Strong analytical and problem-solving skills",
+            "Experience with agile methodologies",
+            "Excellent communication skills"
+        ],
+        link: "/jobs/product-manager"
+    },
+    {
+        id: 5,
+        department: "Engineering",
+        title: "DevOps Engineer",
+        city: "Remote",
+        jobType: "Part Time",
+        description: "Join our DevOps team to build and maintain our cloud infrastructure. You'll work on automation, deployment, and monitoring of our systems.",
+        requirements: [
+            "3+ years of DevOps experience",
+            "Experience with Docker and Kubernetes",
+            "Knowledge of CI/CD pipelines",
+            "Cloud certification (AWS/Azure) preferred"
+        ],
+        link: "/jobs/devops-engineer"
+    },
+    {
+        id: 6,
+        department: "Marketing",
+        title: "Digital Marketing Specialist",
+        city: "Toronto, Canada",
+        jobType: "Part Time",
+        description: "Drive our digital marketing initiatives across various channels. You'll be responsible for SEO, content strategy, and social media marketing.",
+        requirements: [
+            "3+ years of digital marketing experience",
+            "Experience with SEO and Google Analytics",
+            "Strong content creation skills",
+            "Knowledge of marketing automation tools"
+        ],
+        link: "/jobs/digital-marketing-specialist"
+    }
+]

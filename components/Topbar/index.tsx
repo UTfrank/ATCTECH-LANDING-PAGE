@@ -13,7 +13,7 @@ const Topbar = () => {
             <div className="*:flex md:flex-row flex-col gap-y-2 *:justify-between *:items-center">
                 <div>
                     <IoLocationOutline />
-                    27 Paramount building, princess Street, Swindon, UK, SN1 2SD
+                    Flat 2, 22 Mazurek way. Swindon. SN25 1AR
                 </div>
                 <div className="md:ml-24 gap-x-[25px]">
                     {social_links.map(item =>
