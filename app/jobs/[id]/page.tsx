@@ -3,7 +3,12 @@ import { recruiting_jobs } from '@/constants'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-const JobDetails = ({ params }: { params: { id: string } }) => {
+type Props = {
+    params: { id: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+const JobDetails = ({ params }: Props) => {
     const job = recruiting_jobs.find(job => job.link === `/jobs/${params.id}`)
 
     if (!job) {
