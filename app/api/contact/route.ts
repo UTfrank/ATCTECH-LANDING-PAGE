@@ -21,7 +21,7 @@ export async function POST(req: Request) {
             from: 'Contact Form <onboarding@resend.dev>',
             to: ['atctechconsulting@gmail.com'],
             subject: `Contact Form: ${subject || 'New Message'}`,
-            react: ContactFormEmail({ name, email, company, subject, message }),
+            react: ContactFormEmail({ email, name, company, subject, message }),
         });
 
         return NextResponse.json(data);
