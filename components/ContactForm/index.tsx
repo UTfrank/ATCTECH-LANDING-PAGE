@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react"
+import { ToastContainer, toast } from "react-toastify";
 import Button from "../Button"
 
 const ContactForm = () => {
@@ -14,7 +15,8 @@ const ContactForm = () => {
         setError('');
         setSuccess(false);
 
-        const formData = new FormData(e.currentTarget);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
         const data = {
             name: formData.get('name'),
             email: formData.get('email'),
@@ -30,22 +32,21 @@ const ContactForm = () => {
                 body: JSON.stringify(data),
             });
 
+            const responseData = await response.json();
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                throw new Error(responseData.error || 'Failed to send message');
             }
 
             setSuccess(true);
-            e.currentTarget.reset();
+            toast(({ closeToast }) => <p className="text-green-500 text-sm">Your message has been received. Our team will review your inquiry and respond as soon as possible.</p>);
+            form.reset();
         } catch (err) {
-            console.log(err);
-            e.currentTarget.reset();
-            // if (err === "TypeError: e.currentTarget is null") {
-            //     setError('')
-            // }
-            // setError('Failed to send message. Please try again.');
+            const errorMessage = err instanceof Error ? err.message : 'Failed to send message. Please try again.';
+            toast(({ closeToast }) => <p className="text-red-500 text-sm">{errorMessage}</p>);
+            console.error('Contact form error:', err);
+            setError(errorMessage);
         } finally {
             setIsLoading(false);
-            e.currentTarget.reset();
         }
     };
 
@@ -106,12 +107,6 @@ const ContactForm = () => {
                 ></textarea>
             </div>
             {/*atcTech@resend25*/}
-            {error && (
-                <p className="text-red-500 text-sm">{error}</p>
-            )}
-            {success && (
-                <p className="text-green-500 text-sm">Your message has been received. Our team will review your inquiry and respond as soon as possible.</p>
-            )}
             <Button
                 type="submit"
                 variant="secondary"
@@ -120,6 +115,7 @@ const ContactForm = () => {
             >
                 {isLoading ? 'Sending...' : 'Send Message'}
             </Button>
+            <ToastContainer />
         </form>
     )
 }

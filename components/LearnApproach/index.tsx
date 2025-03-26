@@ -1,5 +1,5 @@
 import { learning_section } from "@/constants";
-import Link from "next/link";
+import CourseRegistrationModal from "@/components/CourseRegistrationModal";
 
 const LearnApproach = () => {
     return (
@@ -10,12 +10,19 @@ const LearnApproach = () => {
                     {learning_section.map(item => (
                         <div key={item.id} className="flex flex-col gap-y-5 rounded-xl bg-[#FFFFFF80] hover:bg-white transition-all ease-in duration-300 border border-[#DCDCDC] px-6 py-7">
                             <div className="flex flex-col gap-2.5">
-                                    <h5 className="text-[#040000] text-xl font-bold">{item.title}</h5>
+                                <h5 className="text-[#040000] text-xl font-bold">{item.title}</h5>
                                 <p className="text-[#808080] text-[13px] font-normal">{item.subtitle}</p>
                             </div>
                             <div className="flex justify-between items-center border-t-[0.5px] border-[#DCDCDC] pt-3">
                                 <img src={item.image} width={38} height={40} alt="image" />
-                                <Link href={item.link} className="text-[13px] font-semibold text-[#710000] hover:text-white hover:bg-[#710000] border border-[#040000] hover:border-[#710000] py-1.5 px-5 rounded-full transition-all ease-in duration-300">Get Started</Link>
+                                <CourseRegistrationModal
+                                    title={item.title}
+                                    trigger={
+                                        <button className="text-[13px] cursor-pointer font-semibold text-[#710000] hover:text-white hover:bg-[#710000] border border-[#040000] hover:border-[#710000] py-1.5 px-5 rounded-full transition-all ease-in duration-300">
+                                            Get Started
+                                        </button>
+                                    }
+                                />
                             </div>
                         </div>
                     ))}
@@ -23,6 +30,6 @@ const LearnApproach = () => {
             </div>
         </section>
     )
-} 
+}
 
 export default LearnApproach
