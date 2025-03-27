@@ -11,6 +11,7 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   subsets: ["latin"],
+  preload: true,
 });
 
 const lato = Lato({
@@ -18,18 +19,23 @@ const lato = Lato({
   display: "swap",
   weight: ["100", "300", "400", "700", "900"],
   subsets: ["latin"],
+  preload: true,
 });
 
 const mulish = Mulish({
   variable: "--font-mulish",
   display: "swap",
   subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  preload: true,
 });
 
 const syne = Syne({
   variable: "--font-syne",
+  display: "swap",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+  preload: true,
 });
 
 const raleway = Raleway({
@@ -37,6 +43,7 @@ const raleway = Raleway({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
