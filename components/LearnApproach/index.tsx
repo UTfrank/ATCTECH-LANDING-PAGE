@@ -1,3 +1,5 @@
+"use client";
+
 import { learning_section } from "@/constants";
 import CourseRegistrationModal from "@/components/CourseRegistrationModal";
 
@@ -16,12 +18,12 @@ const LearnApproach = () => {
                             <div className="flex justify-between items-center border-t-[0.5px] border-[#DCDCDC] pt-3">
                                 <img src={item.image} width={38} height={40} alt="image" />
                                 <CourseRegistrationModal
-                                    title={item.title}
                                     trigger={
-                                        <button className="text-[13px] cursor-pointer font-semibold text-[#710000] hover:text-white hover:bg-[#710000] border border-[#040000] hover:border-[#710000] py-1.5 px-5 rounded-full transition-all ease-in duration-300">
+                                        <button className="text-[13px] font-semibold text-[#710000] hover:text-white hover:bg-[#710000] border border-[#040000] hover:border-[#710000] py-1.5 px-5 rounded-full transition-all ease-in duration-300">
                                             Get Started
                                         </button>
                                     }
+                                    courseTitle={item.title}
                                 />
                             </div>
                         </div>

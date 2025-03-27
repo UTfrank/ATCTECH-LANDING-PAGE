@@ -1,139 +1,129 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { useForm } from "react-hook-form"
-import { format } from "date-fns"
-import { Calendar } from "@/components/ui/calendar"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
+import { useState, useEffect } from "react";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import { Calendar } from "@/components/ui/calendar";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 interface CourseRegistrationModalProps {
-    title: string
-    trigger: React.ReactNode
+    trigger: React.ReactNode;
+    courseTitle: string;
 }
 
-interface FormValues {
-    course: string
-    startDate: Date
-    duration: "3" | "6"
-    cost: string
-}
+// Initialize dayjs plugin for localized format
+dayjs.extend(localizedFormat);
 
-const CourseRegistrationModal = ({ title, trigger }: CourseRegistrationModalProps) => {
-    const form = useForm<FormValues>({
-        defaultValues: {
-            course: title,
-            startDate: new Date(),
-            duration: "3",
-            cost: "$85"
-        }
-    })
+const CourseRegistrationModal = ({ trigger, courseTitle }: CourseRegistrationModalProps) => {
+    const [date, setDate] = useState<Date>();
+    const [duration, setDuration] = useState<"3" | "6">("3");
+    const [packageCost, setPackageCost] = useState<string>("$85");
 
-    const watchDuration = form.watch("duration")
-
-    React.useEffect(() => {
-        const cost = watchDuration === "3" ? "$85" : "$180"
-        form.setValue("cost", cost)
-    }, [watchDuration, form])
-
-    const onSubmit = (data: FormValues) => {
-        console.log(data)
-    }
+    useEffect(() => {
+        // Update package cost based on duration
+        setPackageCost(duration === "3" ? "$85" : "$180");
+    }, [duration]);
 
     return (
         <Dialog>
             <DialogTrigger asChild>
                 {trigger}
             </DialogTrigger>
-            <DialogContent className="w-10/12 md:w-7/12 h-[90vh]">
+            <DialogContent className="w-10/12 md:w-5/12 h-[90vh]">
                 <DialogHeader>
-                    <DialogTitle>Course Registration</DialogTitle>
+                    <DialogTitle className="text-xl font-bold text-[#040000]">
+                        Course Registration
+                    </DialogTitle>
                 </DialogHeader>
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-2 h-full overflow-y-scroll scrollbar-hidden">
-                        <FormField
-                            control={form.control}
-                            name="course"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Course</FormLabel>
-                                    <FormControl>
-                                        <Select defaultValue={field.value} onValueChange={field.onChange}>
-                                            <SelectTrigger>
-                                                <SelectValue placeholder="Select a course" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value={title}>{title}</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
+                <div className="grid gap-4 space-y-4 p-2 h-full overflow-y-scroll scrollbar-hidden">
+                    <div className="flex flex-col justify-center items-start gap-y-4">
+                        <Label htmlFor="course" className="text-right">
+                            Course
+                        </Label>
+                        <div className="col-span-3">
+                            <Select defaultValue={courseTitle}>
+                                <SelectTrigger className="w-full">
+                                    <SelectValue placeholder="Select course" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value={courseTitle}>{courseTitle}</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
+                    <div className="flex flex-col justify-center items-start gap-y-4">
+                        <Label htmlFor="date" className="text-right">
+                            Start Date
+                        </Label>
+                        <div className="col-span-3">
+                            <div className="border rounded-md p-2">
+                                <Calendar
+                                    mode="single"
+                                    selected={date}
+                                    onSelect={setDate}
+                                    className="rounded-md border"
+                                    disabled={(date) => date < new Date()}
+                                />
+                            </div>
+                            {date && (
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Selected date: {dayjs(date).format("MMMM D, YYYY")}
+                                </p>
                             )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="startDate"
-                            render={({ field }) => (
-                                <FormItem className="flex flex-col">
-                                    <FormLabel>Start Date</FormLabel>
-                                    <Calendar
-                                        mode="single"
-                                        selected={field.value}
-                                        onSelect={field.onChange}
-                                        className="rounded-md border w-fit"
-                                    />
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="duration"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Duration</FormLabel>
-                                    <FormControl>
-                                        <Select defaultValue={field.value} onValueChange={field.onChange}>
-                                            <SelectTrigger>
-                                                <SelectValue placeholder="Select duration" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="3">3 Months</SelectItem>
-                                                <SelectItem value="6">6 Months</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="cost"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Package Cost</FormLabel>
-                                    <FormControl>
-                                        <Input {...field} disabled />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <button
-                            type="submit"
-                            className="bg-[#710000] text-white py-3 px-6 rounded-full cursor-pointer hover:bg-[#8B0000] transition-colors"
-                        >
-                            Register Now
-                        </button>
-                    </form>
-                </Form>
+                        </div>
+                    </div>
+                    <div className="flex flex-col justify-center items-start gap-y-4">
+                        <Label htmlFor="duration" className="text-right">
+                            Duration
+                        </Label>
+                        <div className="col-span-3">
+                            <Select
+                                defaultValue="3"
+                                onValueChange={(value) => setDuration(value as "3" | "6")}
+                            >
+                                <SelectTrigger className="w-full">
+                                    <SelectValue placeholder="Select duration" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="3">3 Months</SelectItem>
+                                    <SelectItem value="6">6 Months</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
+                    <div className="flex flex-col justify-center items-start gap-y-4">
+                        <Label htmlFor="cost" className="text-right">
+                            Package Cost
+                        </Label>
+                        <div className="col-span-3">
+                            <Input
+                                id="cost"
+                                value={packageCost}
+                                disabled
+                                className="bg-gray-100"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex justify-start">
+                    <button
+                        className="text-[13px] font-semibold text-white bg-[#710000] border border-[#710000] py-1.5 px-5 rounded-full transition-all ease-in duration-300"
+                        onClick={() => console.log({
+                            course: courseTitle,
+                            startDate: date,
+                            duration,
+                            packageCost
+                        })}
+                    >
+                        Register Now
+                    </button>
+                </div>
             </DialogContent>
         </Dialog>
-    )
-}
+    );
+};
 
-export default CourseRegistrationModal
+export default CourseRegistrationModal;
