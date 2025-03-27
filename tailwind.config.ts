@@ -13,7 +13,7 @@ const config: Config = {
         lato: ["var(--font-lato)", "sans-serif"],
         mulish: ["var(--font-mulish)", "sans-serif"],
         syne: ["var(--font-syne)", "sans-serif"],
-        raleway: ["var(--font-raleway)", "sans-serif"], 
+        raleway: ["var(--font-raleway)", "sans-serif"],
       },
     },
   },
