@@ -15,7 +15,7 @@ const LatestJobs = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-x-9 md:gap-x-3 gap-y-6 md:gap-y-0">
                     {latest_jobs.map(item => (
-                        <div className="flex flex-col gap-y-5">
+                        <div key={item.id} className="flex flex-col gap-y-5">
                             <div className="h-[250px] lg:h-[300px] overflow-hidden rounded-xl relative px-5 py-3.5 flex flex-col justify-end after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-options after:bg-[#000000] after:opacity-30 after:z-[1]" style={{backgroundImage: `url(${item.image})`}}>
                                 <div className="relative z-[2] w-fit bg-[#ffffff] text-[#2F2F2F] text-xs lg:text-sm font-semibold py-2.5 px-6 rounded-full">{item.tag}</div>
                             </div>
