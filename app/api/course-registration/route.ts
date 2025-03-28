@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { ContactFormEmail } from '@/emails/contact-form-email';
+import { CourseRegistrationEmail } from '@/emails/course-registration-email';
+import dayjs from 'dayjs';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -15,32 +16,33 @@ export async function POST(req: Request) {
 
     try {
         const formData = await req.json();
-        const { name, email, company, subject, message } = formData;
+        const { course, startDate, duration, packageCost, name, email } = formData;
 
         // Validate required fields
-        if (!name || !email || !company || !subject || !message) {
+        if (!course || !startDate || !duration || !packageCost) {
             return NextResponse.json(
                 { error: 'All fields are required' },
                 { status: 400 }
             );
         }
 
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json(
-                { error: 'Invalid email format' },
-                { status: 400 }
-            );
-        }
+        // Format the date for email
+        const formattedDate = dayjs(startDate).format('MMMM D, YYYY');
 
         try {
             const data = await resend.emails.send({
-                from: 'Contact Form <onboarding@resend.dev>',
+                from: 'Course Registration <onboarding@resend.dev>',
                 to: ['atctechconsulting@gmail.com'],
-                replyTo: email,
-                subject: `Contact Form: ${subject || 'New Message'}`,
-                react: ContactFormEmail({ email, name, company, subject, message }),
+                replyTo: email || 'noreply@atctech.com',
+                subject: `Course Registration: ${course}`,
+                react: CourseRegistrationEmail({
+                    course,
+                    startDate: formattedDate,
+                    duration: duration.toString(),
+                    packageCost,
+                    name,
+                    email
+                }),
             });
 
             if (!data.data?.id) {
@@ -56,7 +58,7 @@ export async function POST(req: Request) {
             );
         }
     } catch (error) {
-        console.error('Error processing contact form:', error);
+        console.error('Error processing registration form:', error);
         return NextResponse.json(
             { error: 'Invalid request data' },
             { status: 400 }
