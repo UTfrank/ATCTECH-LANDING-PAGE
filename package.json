@@ -7,7 +7,7 @@
     "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "npm install --legacy-peer-deps && next build"
+    "vercel-build": "npm install --legacy-peer-deps typescript @types/react @types/node @types/react-dom && next build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
@@ -37,12 +37,16 @@
     "@tailwindcss/postcss": "^4.0.17",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss": "^4.0.17"
-  },
-  "devDependencies": {
+    "tailwindcss": "^4.0.17",
+    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "typescript": "^5"
+    "@types/react-dom": "^19"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
   }
 }
