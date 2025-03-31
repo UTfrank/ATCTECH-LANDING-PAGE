@@ -1,4 +1,5 @@
 import Button from '@/components/Button'
+import PageHeader from '@/components/PageHeader'
 import { recruiting_jobs } from '@/constants'
 import { notFound } from 'next/navigation'
 import React from 'react'
@@ -17,6 +18,9 @@ const JobDetails = async ({ params }: {
 
     return (
         <main className="w-full min-h-screen">
+            <section className='container mx-auto pt-7 pb-[54px]'>
+                <PageHeader title='Jobs' subtitle='Explore endless career opportunities across diverse industries with the right resources and connections.' />
+            </section>
             <div className="container mx-auto py-12">
                 <div className="mx-auto flex flex-col md:flex-row md:justify-between justify-center">
 
@@ -40,7 +44,7 @@ const JobDetails = async ({ params }: {
                     <div className="mt-8 w-full md:w-4/12 lg:w-3/12">
                         <div className='bg-white rounded-xl p-10 flex flex-col gap-y-4'>
                             <h6 className='text-lg text-[#040000] font-bold'>Apply Today</h6>
-                            <p className="text-xs text-[#808080]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum been  standard dummy .</p>
+                            <p className="text-xs text-[#808080]">Explore endless career opportunities across diverse industries with the right resources and connections.</p>
                             <Button className="!bg-[#710000] !text-[#ffffff] !text-[12.5px] !md:text-sm hover:!bg-[#710000] px-4 py-4 !w-fit">
                                 Apply Now
                             </Button>

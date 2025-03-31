@@ -22,14 +22,14 @@ const Jobs = () => {
     if (!acc.hasOwnProperty(job.department)) {
       (acc as { [key: string]: typeof recruiting_jobs })[job.department] = []
     }
-(acc as { [key: string]: typeof recruiting_jobs })[job.department].push(job)
+    (acc as { [key: string]: typeof recruiting_jobs })[job.department].push(job)
     return acc
   }, {})
 
   return (
     <main className="w-full min-h-screen font-mulish">
       <section className='container mx-auto pt-7 pb-[54px]'>
-        <PageHeader title='Jobs' subtitle='Lorem Ipsum is simply dummy text of the printing and typesetting industry.' />
+        <PageHeader title='Jobs' subtitle='Explore endless career opportunities across diverse industries with the right resources and connections.' />
       </section>
       <div className="w-10/12 md:w-9/12 mx-auto py-12">
         <h4 className="text-[#2F2F2F] text-[24px] lg:text-[40px] font-extrabold text-center">Become a part of our big family to inspire and get inspired by <span className='text-[#710000]'>professional experts.</span></h4>
@@ -59,8 +59,7 @@ const Jobs = () => {
         <div className="flex flex-col justify-center items-center gap-y-5 mt-10 w-full">
           <div className='text-center w-10/12 lg:w-8/12 mx-auto'>
             <h3 className="text-[24px] lg:text-[32px] font-extrabold">Can't find the perfect position?</h3>
-            <p className="font-normal text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum been the industry's standard dummy </p>
+            <p className="font-normal text-sm">Discover tailored job opportunities that match your skills and ambitions. </p>
           </div>
           <Button variant="primary" size="md" className="!bg-[#710000] !text-[#ffffff] !text-[12.5px] !md:text-sm hover:!bg-[#710000] px-4 py-4 !w-[205px]">Join Our Team</Button>
         </div>

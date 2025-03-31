@@ -48,7 +48,7 @@ export function HeaderCarousel() {
 
     return (
         <div className="embla w-full h-full relative">
-            <div className="embla__viewport h-full" ref={emblaRef}>
+            <div className="embla__viewport h-full" ref={emblaRef} data-aos="fade-in">
                 <div className="embla__container h-full">
                     <div className="embla__slide bg-options slider_bg-1"></div>
                     <div className="embla__slide bg-options slider_bg-2"></div>

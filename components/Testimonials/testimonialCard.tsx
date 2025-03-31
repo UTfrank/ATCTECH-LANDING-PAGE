@@ -14,11 +14,12 @@ const TestimonialCard = () => {
     const scrollNext = useCallback(() => { if (emblaApi) emblaApi.scrollNext() }, [emblaApi]);
 
     return (
-        <div className="embla relative font-mulish"> 
-            <div className="embla__viewport h-full md:w-9/12 mx-auto" ref={emblaRef}>     
-                <div className="embla__container"> 
-                    {testimonials.map(item  => (
-                        <div key={item.id} className="embla__slide flex flex-col items-center gap-y-5">
+        <div className="embla relative font-mulish">
+            <div className="embla__viewport h-full md:w-9/12 mx-auto" ref={emblaRef} data-aos="fade-in">
+                <div className="embla__container">
+
+                    {testimonials.map(item => (
+                        <div key={item.id} className="embla__slide flex flex-col items-center gap-y-5" data-aos="fade-up" data-aos-delay="100">
                             <div className='flex flex-col items-center gap-y-6'>
                                 <div className='h-[143px] w-[143px] rounded-full overflow-hidden flex justify-center items-center'>
                                     <Image src={item.image} alt='testimonal image' width={1000} height={1000} className='h-full w-full' />
@@ -29,11 +30,11 @@ const TestimonialCard = () => {
                                         <FaStar /><FaStar /><FaStar /><FaStar /><FaStarHalfStroke />
                                     </div>
                                 </div>
-                                    <p className='w-8/12 text-center text-[#040000] text-[10px] md:text-xs lg:text-base'>{item.testimony}</p>
+                                <p className='w-8/12 text-center text-[#040000] text-[10px] md:text-xs lg:text-base'>{item.testimony}</p>
                             </div>
                         </div>
-                    ))}             
-                </div>    
+                    ))}
+                </div>
             </div>
             <div className="w-full absolute top-8/12 left-1/2 -translate-y-1/2 -translate-x-1/2 flex justify-between p-0">
                 <div className='flex justify-center items-center'>

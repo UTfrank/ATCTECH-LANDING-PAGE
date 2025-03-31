@@ -51,8 +51,8 @@ const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="absolute top-4/12 md:top-6/12 w-10/12 rounded-xl py-[50px] md:py-[99px] px-5 md:px-[56px] form-shadow bg-white flex flex-col gap-y-10">
-            <div className="flex flex-col md:flex-row gap-x-0 md:gap-x-12 gap-y-4 md:gap-y-0 *:w-full *:md:w-1/2">
+        <form onSubmit={handleSubmit} className="absolute top-4/12 md:top-6/12 w-10/12 rounded-xl py-[50px] md:py-[99px] px-5 md:px-[56px] form-shadow bg-white flex flex-col gap-y-10" data-aos="fade-up">
+            <div className="flex flex-col md:flex-row gap-x-0 md:gap-x-12 gap-y-4 md:gap-y-0 *:w-full *:md:w-1/2" data-aos="fade-up" data-aos-delay="100">
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                     <input
@@ -74,7 +74,7 @@ const ContactForm = () => {
                     />
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-x-0 md:gap-x-12 gap-y-4 md:gap-y-0 *:w-full *:md:w-1/2">
+            <div className="flex flex-col md:flex-row gap-x-0 md:gap-x-12 gap-y-4 md:gap-y-0 *:w-full *:md:w-1/2" data-aos="fade-up" data-aos-delay="200">
                 <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company</label>
                     <input
@@ -96,7 +96,7 @@ const ContactForm = () => {
                     />
                 </div>
             </div>
-            <div className="w-full">
+            <div className="w-full" data-aos="fade-up" data-aos-delay="300">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea
                     id="message"

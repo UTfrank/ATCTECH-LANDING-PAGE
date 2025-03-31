@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
 import BackToTop from '@/components/BackToTop';
+import AOSInit from '@/components/AOSInit';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,6 +62,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${lato.variable} ${mulish.variable} ${syne.variable} ${raleway.variable} bg-[#FFF5F5]`}
       >
+        <AOSInit />
         <Topbar />
         <Navbar />
         <MobileNav />

@@ -80,13 +80,10 @@ export const team_members = [
 
 export const addresses = [
     {
-        id: 1, country: "United States", slug: "USA", text: "Flat 2, 22 Mazurek way. Swindon. SN25 1AR"
+        id: 1, country: "Nigeria", slug: "NG", text: "2, Salawu close, Alimosho, Lagos."
     },
     {
-        id: 2, country: "Nigeria", slug: "NG", text: "Flat 2, 22 Mazurek way. Swindon. SN25 1AR"
-    },
-    {
-        id: 3, country: "United Kingdom", slug: "UK", text: "Flat 2, 22 Mazurek way. Swindon. SN25 1AR"
+        id: 2, country: "United Kingdom", slug: "UK", text: "BRISTOL, Aztec West"
     },
 ]
 
