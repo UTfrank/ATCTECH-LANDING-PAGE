@@ -21,8 +21,8 @@ const TestimonialCard = () => {
                     {testimonials.map(item => (
                         <div key={item.id} className="embla__slide flex flex-col items-center gap-y-5" data-aos="fade-up" data-aos-delay="100">
                             <div className='flex flex-col items-center gap-y-6'>
-                                <div className='h-[143px] w-[143px] rounded-full overflow-hidden flex justify-center items-center'>
-                                    <Image src={item.image} alt='testimonal image' width={1000} height={1000} className='h-full w-full' />
+                                <div className='h-[143px] w-[143px] rounded-full overflow-hidden flex justify-center items-center bg-options' style={{ backgroundImage: `url(${item.image})`}}>
+                                    {/* <Image src={item.image} alt='testimonal image' width={1000} height={1000} className='h-full w-full' /> */}
                                 </div>
                                 <div className='flex flex-col items-center gap-y-2'>
                                     <h5 className='flex'><strong>{item.name}</strong>, {item.title}</h5>

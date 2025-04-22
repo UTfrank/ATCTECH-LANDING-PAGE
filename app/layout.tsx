@@ -71,14 +71,14 @@ export const metadata: Metadata = {
     telephone: false,
     address: false,
   },
-  metadataBase: new URL('https://atctech.com'),
+  metadataBase: new URL('https://atc.co.uk'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "ATC Tech | Technology Consulting & Digital Solutions",
     description: "Empowering innovation and building digital success with expert technology consulting, training, and digital solutions for businesses.",
-    url: 'https://atctech.com',
+    url: 'https://atc.co.uk',
     siteName: 'ATC Tech',
     images: [
       {

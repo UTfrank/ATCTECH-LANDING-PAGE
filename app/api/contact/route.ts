@@ -6,7 +6,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
     if (!process.env.RESEND_API_KEY) {
-        console.error('RESEND_API_KEY is not configured');
         return NextResponse.json(
             { error: 'Email service is not configured' },
             { status: 500 }
@@ -38,7 +37,6 @@ export async function POST(req: Request) {
             const data = await resend.emails.send({
                 from: 'Contact Form <onboarding@resend.dev>',
                 to: ['atctechconsulting@gmail.com'],
-                replyTo: email,
                 subject: `Contact Form: ${subject || 'New Message'}`,
                 react: ContactFormEmail({ email, name, company, subject, message }),
             });
@@ -49,14 +47,12 @@ export async function POST(req: Request) {
 
             return NextResponse.json({ success: true, id: data.data?.id });
         } catch (emailError) {
-            console.error('Error sending email:', emailError);
             return NextResponse.json(
                 { error: 'Failed to send email' },
                 { status: 500 }
             );
         }
     } catch (error) {
-        console.error('Error processing contact form:', error);
         return NextResponse.json(
             { error: 'Invalid request data' },
             { status: 400 }

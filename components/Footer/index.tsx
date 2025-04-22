@@ -41,14 +41,14 @@ const Footer = () => {
                         <div className="flex items-center gap-x-4 text-[#AEAEB2]">
                             <p className="font-syne font-bold text-xl">Contact</p>
                             <p className={`transition-colors font-inter text-xs capitalize`}>
-                                Flat 2, 22 Mazurek way. Swindon. SN25 1AR
+                                BRISTOL, Aztec West
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 justify-between items-center text-[#AEAEB2] lg:w-6/12 mx-auto *:flex">
                         <div className="gap-x-[22px]">
                             {social_links.map(item =>
-                                <Link key={item.id} href={item.link}>{item.icon}</Link>)}
+                                <Link key={item.id} href={item.link} target="_blank">{item.icon}</Link>)}
                         </div>
                         <p className="font-syne text-sm font-medium text-center lg:text-left">© Copyright ATCTech.. All Rights Reserved</p>
                     </div>

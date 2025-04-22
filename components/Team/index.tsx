@@ -18,8 +18,8 @@ const Team = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-5 gap-y-5 md:gap-y-0 mt-10">
                     {team_members.map((item, index) => (
                         <div key={item.id} className="flex flex-col gap-y-4" data-aos="fade-up" data-aos-delay={200 * index}>
-                            <div className="md:h-[270px] lg:h-[350px] w-full overflow-hidden rounded-xl">
-                                <Image src={item.image} alt="team" width={300} height={300} sizes="100vw" className="w-full h-auto" />
+                            <div className="h-[400px] md:h-[270px] lg:h-[350px] w-full overflow-hidden rounded-xl bg-options" style={{ backgroundImage: `url(${item.image})` }}>
+                                {/* <Image src={item.image} alt="team" width={300} height={300} sizes="100vw" className="w-full h-auto" /> */}
                             </div>
                             <div className="text-center">
                                 <h6 className="font-bold text-xl">{item.name}</h6>

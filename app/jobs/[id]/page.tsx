@@ -4,13 +4,18 @@ import { recruiting_jobs } from '@/constants'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
+export function generateStaticParams() {
+    return recruiting_jobs.map((job) => ({
+        id: job.link.split('/jobs/')[1]
+    }))
+}
+
 
 const JobDetails = async ({ params }: {
     params: Promise<{ id: string }>
 }) => {
     const id = (await params).id;
     const job = recruiting_jobs.find(job => job.link === `/jobs/${id}`)
-    console.log(id);
 
     if (!job) {
         notFound()

@@ -3,10 +3,10 @@ import { GrSend } from "react-icons/gr";
 import { SlSettings } from "react-icons/sl";
 
 export const social_links = [
-    { id: 1, icon: <FaInstagram />, link: "#" },
-    { id: 2, icon: <FaFacebook />, link: "#" },
-    { id: 3, icon: <FaTwitter />, link: "#" },
-    { id: 4, icon: <FaLinkedin />, link: "#" },
+    { id: 1, icon: <FaInstagram />, link: "https://www.instagram.com/atctechconsulting" },
+    { id: 2, icon: <FaFacebook />, link: "https://www.facebook.com/atctectconsulting" },
+    { id: 3, icon: <FaTwitter />, link: "https://www.x.com/atctechltd" },
+    { id: 4, icon: <FaLinkedin />, link: "https://www.linkedin.com/company/atctechconsulting" },
 ]
 
 export const about_details = [

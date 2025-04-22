@@ -43,7 +43,6 @@ const ContactForm = () => {
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'Failed to send message. Please try again.';
             toast(({ closeToast }) => <p className="text-red-500 text-sm">{errorMessage}</p>);
-            console.error('Contact form error:', err);
             setError(errorMessage);
         } finally {
             setIsLoading(false);
