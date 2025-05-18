@@ -68,7 +68,7 @@ const CourseRegistrationModal = ({
     setIsLoading(true);
 
     try {
-        const response = await fetch("/api/course-registration", {
+        const response = await fetch("/api/course-registration-route", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
